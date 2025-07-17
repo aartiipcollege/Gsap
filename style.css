@@ -1,0 +1,305 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100vh;
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =================== Page1 Styling =================== */
+#page1 {
+    height: 100vh;
+    width: 100%;
+    /* background: #dadada; */
+    position: relative;
+}
+
+#cursor {
+    height: 7vw;
+    width: 7vw;
+    background: #a39d9d;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    pointer-events: none;
+    transition: transform 0.1s ease;
+    transform: translate(-50%, -50%);
+}
+
+#page1 video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+#page1-content {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2vw;
+    text-align: center;
+}
+
+#page1-content nav {
+    font-size: 1.2vw;
+    font-weight: 100;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 3vw;
+}
+
+#page1-content h1 span {
+    font-size: 23vw;
+    font-weight: 100;
+    display: inline-block;
+}
+
+/* =================== Page2 Styling =================== */
+#page2 {
+    width: 100%;
+    min-height: 80vh;
+    padding: 50px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #efeded;
+}
+
+.elem h1 {
+    font-size: 2rem;
+    max-width: 900px;
+    text-align: center;
+    line-height: 1.5;
+    color: #222;
+}
+
+#page3 {
+    height: auto;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    padding: 3vw;
+}
+
+.page3-top {
+    text-align: center;
+    margin-bottom: 8vw;
+}
+
+.page3-top h4 {
+    font-size: 1.1vw;
+    margin-bottom: 1vw;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+}
+
+.page3-top h4 span {
+    font-size: 0.7vw;
+    background: #000;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 50px;
+}
+
+.page3-top h2 {
+    font-size: 3vw;
+    font-weight: 500;
+}
+
+.page3-element {
+    height: 75vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.box {
+    height: 100%;
+    width: 32.5%;
+    position: relative;
+}
+
+.box img,
+.box video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* By default image on top */
+.box img {
+    z-index: 2;
+    opacity: 1;
+}
+
+.box video {
+    z-index: 1;
+    opacity: 1;
+}
+
+/* On hover, image fades out to reveal video */
+.box:hover img {
+    opacity: 0;
+}
+
+.page4 {
+    width: 100%;
+    min-height: 80vh;
+    height: 100vh;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #efeded;
+}
+
+.page4 h2 {
+    font-size: 2.5vw;
+    text-align: center;
+    line-height: 1.5;
+    color: #222;
+    font-weight: 100;
+}
+
+#page5 {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    padding: 4vw 0;
+}
+
+#page5 h1 {
+    font-size: 6vw;
+    font-weight: 200;
+    border-bottom: 2px solid grey;
+    margin: 0 3%;
+}
+
+.swiperDiv {
+    height: 70vh;
+    width: 120%;
+    position: relative;
+    margin-top: -25px;
+}
+
+.swiper {
+    width: 100%;
+    padding: 40px 0;
+}
+
+.swiper-slide {
+    height: 300px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    font-size: 24px;
+    border-radius: 10px;
+    gap: 5px;
+}
+
+.swiper-slide img {
+    width: 19%;
+    display: block;
+    object-fit: cover;
+}
+
+.swiper-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+
+
+/* =================== Responsive Media Queries =================== */
+
+/* Tablets */
+
+@media (max-width: 1024px) {
+    #page1-content nav {
+        font-size: 2vw;
+        padding: 5vw;
+    }
+
+    #cursor {
+        height: 10vw;
+        width: 10vw;
+    }
+
+    .elem h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    #page1-content nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        font-size: 4vw;
+    }
+
+    #cursor {
+        height: 12vw;
+        width: 12vw;
+    }
+
+    #page1-content h1 span {
+        font-size: 28vw;
+    }
+
+    .elem h1 {
+        font-size: 1.5rem;
+        padding: 0 10px;
+    }
+}
+
+/* Small Mobiles */
+@media (max-width: 480px) {
+    .elem h1 {
+        font-size: 1.2rem;
+        line-height: 1.4;
+    }
+
+    #page1-content nav {
+        font-size: 4.5vw;
+    }
+
+    #page1-content h1 span {
+        font-size: 32vw;
+    }
+}
